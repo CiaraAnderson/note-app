@@ -35,6 +35,10 @@ getNotes = () => {
   .catch((err) => console.log(err.response.data) );
 }
 
+submitNote = (data) => {
+  console.log(data);
+  }
+
 render() {
    const { showNote, notes, note } = this.state;
 
@@ -45,6 +49,7 @@ render() {
      {showNote ?
         <Note 
         note={note}
+        submitNote={this.submitNote}
         />
         :
         <List
