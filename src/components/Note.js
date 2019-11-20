@@ -20,8 +20,7 @@ class Note extends React.Component {
     this.props.closeTagForm();
   }
 
-  renderTagForm(note) {
-    if (note.id !== undefined) {
+  renderTagForm() {
       if (!this.props.newTag) {
         return (
           <span>
@@ -46,7 +45,7 @@ class Note extends React.Component {
           </form>
         );
       }
-    }
+
   }
 
   renderTags(note) {
@@ -72,7 +71,7 @@ class Note extends React.Component {
                onSubmit={(e) => this.onSubmit(e)} 
                onClick={() => closeTagForm()}
               >
-            className="note-title-input"
+            <input className="note-title-input"
             type="text"
             placeholder="Note Title..."
             defaultValue={note.title}

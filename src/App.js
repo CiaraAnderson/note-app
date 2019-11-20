@@ -33,7 +33,8 @@ getNotes = () => {
 
  getNote = (id) => {
   axios.get(urlFor(`notes/${id}`))
-  .then((res) => this.setState({ note: res.data, showNote: true }) )
+  .then((res) => {
+    this.setState({ note: res.data, showNote: true }) })
   .catch((err) => console.log(err.response.data) );
 }
 
